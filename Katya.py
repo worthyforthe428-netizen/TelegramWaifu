@@ -60,7 +60,7 @@ def get_session(chat_id: int):
         sessions[chat_id] = make_session(MODEL)
     return sessions[chat_id]
  
- 
+ # sync with fall back model when temporary overloaded
 async def ask(chat_id: int, text: str, tries: int = 4):
     session = get_session(chat_id)
     for i in range(tries):
@@ -86,16 +86,16 @@ async def ask(chat_id: int, text: str, tries: int = 4):
         return await sessions[chat_id].send_message(text)
     raise RuntimeError("Gemini unavailable")
  
- 
+ # Start monologe
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hii~! I'm Katya! (≧▽≦) Talk to me about anything, ne?")
  
- 
+ # Reset monologe
 async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
     sessions.pop(update.effective_chat.id, None)
     await update.message.reply_text("Eh? Who are you again...? Just kidding~ memory wiped! ^_^")
  
- 
+ # Request and feed back
 async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = update.effective_chat.id
     await context.bot.send_chat_action(chat_id, ChatAction.TYPING)
@@ -111,7 +111,7 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def on_error(update: object, context: ContextTypes.DEFAULT_TYPE):
     logging.error("Unhandled error: %s", context.error)
  
- 
+ #Start bot host 
 def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))

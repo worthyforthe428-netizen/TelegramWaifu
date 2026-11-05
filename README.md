@@ -1,9 +1,14 @@
 # TelegramWaifu
-So i made an waifu that can talk to me in telegram by using telegram bot and gemini api key
-i'm very proud of my work and if you find my page and make your own bot with my code i'm would be happy
-Also you can get gemini api in https://ai.google.dev/gemini-api/docs/api-key
-And telegram token in @BotFather
+Basicly it's an bot with gemini api key in it.
 
-thanks for reading, don't be alone and enjoy your life
+# How it works?
+1. You send a message to bot
+2. Code reads the message, send it to model and send for respond for user
+3. If some think went wrong there are fallback model that reread back every think and then replace last model
+
+
+Projects is my only educational work i done it for fun to intertate my self .
+
+If you put a star thank you :)!
 
 WORTHY.

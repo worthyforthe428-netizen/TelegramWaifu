@@ -1,4 +1,6 @@
 # TelegramWaifu
+<img width="605" height="680" alt="Screenshot_2026-11-05_23-17-07" src="https://github.com/user-attachments/assets/63d5f094-8cbb-44c9-98cb-d69e84bcae05" />
+
 Basicly it's an bot with gemini api key in it.
 
 # How it works?

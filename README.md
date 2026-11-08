@@ -13,4 +13,7 @@ Projects is my only educational work i done it for fun to intertate my self .
 
 If you put a star thank you :)!
 
+# Quick change 
+i changed  code and now waifu would send you a message if you didn't responde for 10 min :D
+
 WORTHY.
